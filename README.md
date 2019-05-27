@@ -28,7 +28,7 @@ Many APIs that you'll want to use will require you to have various API keys that
 - Now you'll need to add a `.env` file (notice the dot before the filename) to the root of this repo. This `.env` file will be the file we will hold all our API Keys in. Notice that we have included the `.env` file in our `.gitignore` file so that you do not push up all of your API Keys to Github. You can create this file from the terminal by `cd` into this repository and running `touch .env`. 
 - Now you'll need to add your API Keys to this file following the format below: 
 ```
-CODEBUG_CORS_ORIGINS='null;codebug-api-test.surge.sh'
+CODEBUG_CORS_ORIGINS=null;http://codebug-api-test.surge.sh
 CODEBUG_AIRTABLE_API_KEY=ThisIsMyAirtableAPIKey
 CODEBUG_UNSPLASH_CLIENT_SECRET_KEY=ThisIsMyUnsplashSecretKey
 CODEBUG_UNSPLASH_CLIENT_VERSION=12.0.2
@@ -55,7 +55,7 @@ Heroku is a hosting service we'll be using to put our backend API on the interne
 - If everything worked well you should see a line (about 5 lines up from the bottom) that says `remote: https://test-api-app-test.herokuapp.com/ deployed to Heroku` with your URL. 
 - Cool! Everything is deployed! 
 - Now, remember how we added our `.env` file to our `.gitignore` file so that we wouldn't push our API Keys when we pushed to Github, well they won't be pushed to Heroku either. You'll need to go to your app on Heroku, click the "Settings" tab, click "Reveal Config Vars", and set them all individually in here. No equals sign is necessary, so in the left-most text area on Heroku, you'll add `CODEBUG_CORS_ORIGINS` as the key and on the right side you'll add something like `test-api.surge.sh` (which will actually be the URL where your frontend app is deployed).
-- Add every environment variable to Heroku. 
+- Add every environment variable to Heroku (with `CODEBUG_` prepended to each environment variable). 
 
 
 ### Last Step!
